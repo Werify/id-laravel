@@ -1,0 +1,25 @@
+{
+    "name": "werify/id-laravel",
+    "description": "werify id pacakge for laravel.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Werify\\IdLaravel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arash Rasoulzadeh",
+            "email": "a.rasoulzadeh@trader4.net"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Werify\\IdLaravel\\Providers\\WerifyIDServiceProvider"
+            ]
+        }
+    }
+}

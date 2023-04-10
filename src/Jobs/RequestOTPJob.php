@@ -15,7 +15,7 @@ class RequestOTPJob extends BaseJob
 		$path = $this->generateUrl(config('auth-service.api.request-otp'));
 		$payload = ['identifier' => $this->identifier];
 		$request = $this->post($path, $payload);
-		if ($request->status() === 201) {
+		if ($request->status() === 200) {
 			return $request->json();
 		}
 		throw new Exception('Request OTP Failed');

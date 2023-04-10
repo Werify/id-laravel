@@ -12,13 +12,13 @@ class WerifyIDServiceProvider extends ServiceProvider
 
 		if ($this->app->runningInConsole()) {
 			$this->publishes([
-				__DIR__ . '/../Config/config.php' => config_path('auth-service.php'),
+				__DIR__ . '/../Config/config.php' => config_path('werify-auth-service.php'),
 			], 'config');
 		}
 	}
 
 	public function register()
 	{
-		$this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'auth-service');
+		$this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'werify-auth-service');
 	}
 }

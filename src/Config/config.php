@@ -5,6 +5,7 @@ use Werify\IdLaravel\Http\Controllers\Api\V1\AuthController;
 return
 	[
 		'version' => 'v1',
+		'app_key' => 'not_set',
 		'routes' =>
 		[
 			'group' => 'api/werify',

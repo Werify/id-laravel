@@ -8,7 +8,7 @@ class BaseJob
 {
 	public function generateUrl(string $path): string
 	{
-		return config('auth-service.api.base_api_path') . '/' . config('auth-service.version') . '/' . $path;
+		return config('werify-auth-service.api.base_api_path') . '/' . config('werify-auth-service.version') . '/' . $path;
 	}
 
 	public function post($path, $payload, $token = null)
@@ -28,7 +28,8 @@ class BaseJob
 		$headers =
 			[
 				'accept' => 'application/json',
-				'content-type' => 'application/json'
+				'content-type' => 'application/json',
+				'app_key' => config('werify-auth-service.app_key')
 			];
 
 		if ($token) {

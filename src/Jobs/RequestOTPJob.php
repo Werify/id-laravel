@@ -12,7 +12,7 @@ class RequestOTPJob extends BaseJob
 	}
 	public function handle()
 	{
-		$path = $this->generateUrl(config('auth-service.api.request-otp'));
+		$path = $this->generateUrl(config('werify-auth-service.api.request-otp'));
 		$payload = ['identifier' => $this->identifier];
 		$request = $this->post($path, $payload);
 		if ($request->status() === 200) {

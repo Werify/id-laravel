@@ -12,7 +12,7 @@ class VerifyOTPJob extends BaseJob
 	}
 	public function handle()
 	{
-		$path = $this->generateUrl(config('auth-service.api.verify-otp'));
+		$path = $this->generateUrl(config('werify-auth-service.api.verify-otp'));
 		$payload = ['id' => $this->id, 'hash' => $this->hash, 'otp' => $this->otp];
 		$request = $this->post($path, $payload);
 

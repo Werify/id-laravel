@@ -12,7 +12,7 @@ class GetUserProfileFinancialInformationJob extends BaseJob
 	}
 	public function handle()
 	{
-		$path = $this->generateUrl(config('auth-service.api.profile-financial-information'));
+		$path = $this->generateUrl(config('werify-auth-service.api.profile-financial-information'));
 		$request = $this->get($path, $this->token);
 		if ($request->status() === 200) {
 			return $request->json();

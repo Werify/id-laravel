@@ -12,7 +12,7 @@ class GetUserProfileEducationJob extends BaseJob
 	}
 	public function handle()
 	{
-		$path = $this->generateUrl(config('auth-service.api.profile-mobile-education'));
+		$path = $this->generateUrl(config('werify-auth-service.api.profile-mobile-education'));
 		$request = $this->get($path, $this->token);
 		if ($request->status() === 200) {
 			return $request->json();

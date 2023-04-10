@@ -16,7 +16,7 @@ class AuthController extends Controller
 				'identifier' => 'required|string'
 			]
 		);
-		return dispatch_now(new RequestOTPJob($request['identifier']));
+		return dispatch_sync(new RequestOTPJob($request['identifier']));
 	}
 
 	public function verifyOTP(Request $request)
@@ -29,6 +29,6 @@ class AuthController extends Controller
 				'otp' => 'required|string'
 			]
 		);
-		return dispatch_now(new VerifyOTPJob($request['id'], $request['hash'], $request['otp']));
+		return dispatch_sync(new VerifyOTPJob($request['id'], $request['hash'], $request['otp']));
 	}
 }

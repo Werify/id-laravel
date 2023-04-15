@@ -21,7 +21,9 @@ class WerifyAuthMiddleware
 		} catch (Exception  | Throwable $e) {
 			abort(401);
 		}
-		$request->user = $profile;
+
+        $request->user = $profile;
+		$request->setUserResolver(fn() => $profile);
 		$request = $request->merge($profile);
 
 		return $next($request);

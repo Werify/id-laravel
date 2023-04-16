@@ -7,6 +7,7 @@ use Werify\IdLaravel\Jobs\RequestOTPJob;
 use Werify\IdLaravel\Jobs\RequestQRImageJob;
 use Werify\IdLaravel\Jobs\RequestQRJob;
 use Werify\IdLaravel\Jobs\VerifyOTPJob;
+use  Werify\IdLaravel\Jobs\ClaimQRJob;
 
 class AuthController extends Controller
 {
@@ -48,12 +49,14 @@ class AuthController extends Controller
 
 	public function qrClaim(Request $request)
 	{
-		$request = $this->validate(
+		$validated = $this->validate(
 			$request,
 			[
 				'id' => 'required|string',
 				'hash' => 'required|string'
 			]
 		);
+
+		return dispatch_sync(new ClaimQRJob($request->token,$validated['id'],$validated['hash']));
 	}
 }

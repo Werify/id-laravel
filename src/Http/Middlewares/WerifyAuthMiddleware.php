@@ -23,8 +23,8 @@ class WerifyAuthMiddleware
 		}
 
         $request->user = $profile;
+		$request->token = $token;
 		$request->setUserResolver(fn() => $profile);
-		$request = $request->merge($profile);
 
 		return $next($request);
 	}

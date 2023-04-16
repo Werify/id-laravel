@@ -38,6 +38,6 @@ return
 			'profile-education' => 'user/profile/education',
 			'profile-financial-information' => 'user/profile/financial-information',
 			'qr' => 'qr',
-			'qr-image' => 'qr-image'
+			'qr-image' => 'qr'
 		]
 	];

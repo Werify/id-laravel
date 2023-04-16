@@ -7,7 +7,7 @@ use Exception;
 class RequestQRJob extends BaseJob
 {
 
-	public function __construct(public string $identifier)
+	public function __construct()
 	{
 	}
 	public function handle()

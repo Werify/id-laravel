@@ -41,8 +41,8 @@ class AuthController extends Controller
 	public function qrImage(Request $request)
 	{
 		$result = dispatch_sync(new RequestQRJob());
-		$id = $result['id'];
-		$hash = $result['hash'];
+		$id = $result['results']['id'];
+		$hash = $result['results']['hash'];
 		return dispatch_sync(new RequestQRImageJob($id,$hash));
 	}
 }

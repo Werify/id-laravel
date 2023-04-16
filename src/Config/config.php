@@ -11,7 +11,8 @@ return
 			'group' => 'api/werify',
 			'request-otp' => '/request-otp',
 			'verify-otp' => '/verify-otp',
-			'qr' => 'qr'
+			'qr' => 'qr',
+			'qr-image' => 'qr-image'
 		],
 		'controllers' =>
 		[
@@ -20,7 +21,8 @@ return
 				'class' => AuthController::class,
 				'request-otp' => 'requestOTP',
 				'verify-otp' => 'verifyOTP',
-				'qr' => 'qr'
+				'qr' => 'qr',
+				'qr-image' => 'qrImage',
 			],
 
 		],
@@ -36,5 +38,6 @@ return
 			'profile-education' => 'user/profile/education',
 			'profile-financial-information' => 'user/profile/financial-information',
 			'qr' => 'qr',
+			'qr-image' => 'qr-image'
 		]
 	];

@@ -4,6 +4,7 @@ namespace Werify\IdLaravel\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use Werify\IdLaravel\Jobs\RequestOTPJob;
+use Werify\IdLaravel\Jobs\RequestQRImageJob;
 use Werify\IdLaravel\Jobs\RequestQRJob;
 use Werify\IdLaravel\Jobs\VerifyOTPJob;
 
@@ -36,5 +37,12 @@ class AuthController extends Controller
 	public function qr(Request $request)
 	{
 		return dispatch_sync(new RequestQRJob());
+	}
+	public function qrImage(Request $request)
+	{
+		$result = json_decode(dispatch_sync(new RequestQRJob()),true);
+		$id = $result['id'];
+		$hash = $result['hash'];
+		return dispatch_sync(new RequestQRImageJob($id,$hash));
 	}
 }

@@ -12,7 +12,8 @@ return
 			'request-otp' => '/request-otp',
 			'verify-otp' => '/verify-otp',
 			'qr' => 'qr',
-			'qr-image' => 'qr-image'
+			'qr-image' => 'qr-image',
+			'qr-claim' => 'qr-claim'
 		],
 		'controllers' =>
 		[
@@ -23,6 +24,7 @@ return
 				'verify-otp' => 'verifyOTP',
 				'qr' => 'qr',
 				'qr-image' => 'qrImage',
+				'qr-claim' => 'qrClaim'
 			],
 
 		],
@@ -38,6 +40,7 @@ return
 			'profile-education' => 'user/profile/education',
 			'profile-financial-information' => 'user/profile/financial-information',
 			'qr' => 'qr',
-			'qr-image' => 'qr'
+			'qr-image' => 'qr',
+			'qr-claim' => 'user/qr/'
 		]
 	];

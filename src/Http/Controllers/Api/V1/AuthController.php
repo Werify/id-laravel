@@ -45,4 +45,15 @@ class AuthController extends Controller
 		$hash = $result['results']['hash'];
 		return dispatch_sync(new RequestQRImageJob($id,$hash));
 	}
+
+	public function qrClaim(Request $request)
+	{
+		$request = $this->validate(
+			$request,
+			[
+				'id' => 'required|string',
+				'hash' => 'required|string'
+			]
+		);
+	}
 }

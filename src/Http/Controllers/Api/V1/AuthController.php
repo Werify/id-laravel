@@ -4,6 +4,7 @@ namespace Werify\IdLaravel\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
 use Werify\IdLaravel\Jobs\RequestOTPJob;
+use Werify\IdLaravel\Jobs\RequestQRJob;
 use Werify\IdLaravel\Jobs\VerifyOTPJob;
 
 class AuthController extends Controller
@@ -30,5 +31,10 @@ class AuthController extends Controller
 			]
 		);
 		return dispatch_sync(new VerifyOTPJob($request['id'], $request['hash'], $request['otp']));
+	}
+
+	public function qr(Request $request)
+	{
+		return dispatch_sync(new RequestQRJob());
 	}
 }

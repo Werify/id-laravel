@@ -29,7 +29,7 @@ class BaseJob
 			[
 				'accept' => 'application/json',
 				'content-type' => 'application/json',
-				'app_key' => config('werify-auth-service.app_key')
+				'api-key' => config('werify-auth-service.app_key')
 			];
 
 		if ($token) {
